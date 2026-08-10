@@ -1,8 +1,8 @@
 --create
 CREATE TABLE ExampleTable1 (
-    [id] INT PRIMARY KEY,
-    [name] TEXT NOT NULL,
-    [age] INT NOT NULL
+    id INT PRIMARY KEY,
+    name TEXT NOT NULL,
+    age INT NOT NULL
 );
 
 --insert
