@@ -4,3 +4,4 @@ We shall start with WEEK 1
 
 WEEK 1
 
+![image](image.png)
