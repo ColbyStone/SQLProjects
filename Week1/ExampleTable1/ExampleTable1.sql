@@ -1,15 +1,10 @@
---create
-CREATE TABLE ExampleTable1 (
-    id INT PRIMARY KEY,
-    name TEXT NOT NULL,
-    age INT NOT NULL
+CREATE TABLE [dbo].[EXAMPLE] (
+	ID INT PRIMARY KEY,
+	first_name NVARCHAR(255),
+	last_name NVARCHAR(255)
 );
 
---insert
-INSERT INTO ExampleTable1 (id, name, age) VALUES
-(1, 'Alice', 30),
-(2, 'Bob', 25),
-(3, 'Charlie', 35);
+INSERT INTO EXAMPLE2 VALUES (1, 'Dave', 'Stone');
+INSERT INTO EXAMPLE2 VALUES (2, 'Lily', 'Bro');
 
---fetch
-SELECT * FROM ExampleTable1;
+SELECT * FROM EXAMPLE2;
