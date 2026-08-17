@@ -1,0 +1,17 @@
+why the Support DB copy of Cellarium exists, and when a nightly backup is good enough versus when it is not?
+
+Why a separate support DB copy exists
+1. Isolation from the production load = debugging queries can be expensive (select *s). Running them against production risks lock contention, buffer pool churn.
+2. Access control - easy to grant engineer staff read access to a copy than to production, where creds are scoped
+3. Safety - a copy makes it impossible for a support investigation to accidentally mutate production data
+4. Point-in-time consistency for investigation - a static snapshot lets you investigae "what did the data look like at time t" without changes happening under you mid-query
+
+When nightly backup is good enough
+A: The support need is investigative - what did this record look like yesterday - reproducing a bug
+The workload is read-heavy and exploratory rather than time-critical
+
+When nightly backup is not good enough
+A: During a live fix, Active incident triage, a 12-23-hour-old snapshot can be misleading, Data that changes frequently and spport needs it now. and anything involving records created or modified after the last nightly run
+
+Rule of thumb: nightly is fine for what happened and not fine for whats happening or did my change take effect
+
