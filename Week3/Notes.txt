@@ -1,0 +1,9 @@
+Source — the original system of record where the data is created and modified for operational purposes, not analysis (e.g., the production WorkRequest/Task/Proof tables you've been querying).
+
+Staging — a landing zone that holds a raw, largely unmodified copy of source data, isolated so downstream work never touches production and can re-run without re-extracting.
+
+Transform — the step that reshapes staged data into analysis-ready form: cleaning, joining, deduplicating, recalculating, and applying the kind of business logic (like the Deleted/NULL handling you've been doing) that raw source data doesn't carry on its own.
+
+Mart — a smaller, purpose-built dataset modeled around one business area or team's questions (e.g., "proofing turnaround" or "on-time rate"), optimized for querying and reporting rather than for transactional writes.
+
+Grain — the precise definition of what a single row in a table represents (e.g., "one row per proof version" vs. "one row per task") — get this wrong and every aggregate built on top of it is wrong in a way that won't announce itself.
