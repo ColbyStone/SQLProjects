@@ -7,3 +7,8 @@ Transform — the step that reshapes staged data into analysis-ready form: clean
 Mart — a smaller, purpose-built dataset modeled around one business area or team's questions (e.g., "proofing turnaround" or "on-time rate"), optimized for querying and reporting rather than for transactional writes.
 
 Grain — the precise definition of what a single row in a table represents (e.g., "one row per proof version" vs. "one row per task") — get this wrong and every aggregate built on top of it is wrong in a way that won't announce itself.
+
+8.28.2026
+Today is my last day here at Lytho. I am very appreciative and grateful for this experience and for all the great friends ive made along the way :)
+
+
